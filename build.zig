@@ -692,7 +692,16 @@ const ZiglingStep = struct {
                 \\{s}
                 \\{s}-----------{s}
                 \\
-            , .{ red_text, reset_text, self.exercise.output, red_text, reset_text, output, red_text, reset_text });
+            , .{
+                red_text,
+                reset_text,
+                self.exercise.output,
+                red_text,
+                reset_text,
+                output,
+                red_text,
+                reset_text,
+            });
             return error.InvalidOutput;
         }
 
