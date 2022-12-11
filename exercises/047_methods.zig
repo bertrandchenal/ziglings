@@ -55,6 +55,10 @@ const Alien = struct {
             .health = strength * 5,
         };
     }
+
+    // pub fn powerup(self: *Alien) void {
+    //     self.health += 100;
+    // }
 };
 
 // Your trusty weapon. Zap those aliens!
@@ -77,6 +81,7 @@ pub fn main() void {
         Alien.hatch(5),
         Alien.hatch(3),
     };
+    // aliens[0].powerup();
 
     var aliens_alive = aliens.len;
     var heat_ray = HeatRay{ .damage = 7 }; // We've been given a heat ray weapon.
@@ -89,7 +94,7 @@ pub fn main() void {
         for (aliens) |*alien| {
 
             // *** Zap the alien with the heat ray here! ***
-            ???.zap(???);
+            heat_ray.zap(alien);
 
             // If the alien's health is still above 0, it's still alive.
             if (alien.health > 0) aliens_alive += 1;
